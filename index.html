@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Businesses</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Business Listings</h1>
+    <div id="xmlContent"></div>
+
+    <script>
+        fetch("businesses.xml")
+            .then(response => response.text())
+            .then(xmlText => {
+                let parser = new DOMParser();
+                let xmlDoc = parser.parseFromString(xmlText, "text/xml");
+                let businesses = xmlDoc.getElementsByTagName("business");
+                let output = "<div class='businesses'>";
+
+                for (let i = 0; i < businesses.length; i++) {
+                    let name = businesses[i].getElementsByTagName("name")[0].textContent;
+                    let gif = businesses[i].getElementsByTagName("gif")[0].textContent;
+                    let sound = businesses[i].getElementsByTagName("sound")[0].textContent;
+                    let items = businesses[i].getElementsByTagName("item");
+
+                    output += `<div class='business'>
+                        <h2>${name}</h2>
+                        <img src="${gif}" alt="Business Image">
+                        <audio controls><source src="${sound}" type="audio/mpeg">Your browser does not support the audio tag.</audio>
+                        <h3>Items:</h3>
+                        <ul>`;
+
+                    for (let j = 0; j < items.length; j++) {
+                        let itemName = items[j].getElementsByTagName("name")[0].textContent;
+                        let price = items[j].getElementsByTagName("price")[0].textContent;
+                        let description = items[j].getElementsByTagName("description")[0].textContent;
+
+                        output += `<li>
+                            <strong>${itemName}</strong> - ${price}
+                            <p>${description}</p>
+                        </li>`;
+                    }
+
+                    output += `</ul></div>`;
+                }
+
+                output += "</div>";
+                document.getElementById("xmlContent").innerHTML = output;
+            })
+            .catch(error => console.log("Error loading XML:", error));
+    </script>
+</body>
+</html>
