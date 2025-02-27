@@ -1,0 +1,127 @@
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 20px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+businesses {
+    display: block;
+    max-width: 90%;
+    width: 800px;
+    margin: 50px auto;
+    background-color: orange;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+business {
+    display: block;
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    color: rgb(160, 96, 219);
+}
+
+name {
+    font-size: 22px;
+    font-weight: bold;
+    color: palevioletred;
+    display: block;
+    margin-bottom: 10px;
+}
+
+price {
+    font-size: 18px;
+    font-weight: bold;
+    color: orange;
+    display: block;
+    margin-bottom: 5px;
+}
+
+description {
+    font-size: 14px;
+    display: block;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: rgb(91, 156, 194);
+}
+
+sound, gif {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 1024px) {
+    businesses {
+        width: 95%;
+        max-width: 600px;
+        margin: 30px auto;
+    }
+
+    business {
+        padding: 10px;
+    }
+
+    name {
+        font-size: 20px;
+    }
+
+    price {
+        font-size: 16px;
+    }
+
+    description {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 768px) {
+    businesses {
+        width: 100%;
+        padding: 15px;
+    }
+
+    business {
+        padding: 8px;
+    }
+
+    name {
+        font-size: 18px;
+    }
+
+    price {
+        font-size: 14px;
+    }
+
+    description {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    businesses {
+        padding: 10px;
+    }
+
+    business {
+        padding: 5px;
+    }
+
+    name {
+        font-size: 16px;
+    }
+
+    price {
+        font-size: 14px;
+    }
+
+    description {
+        font-size: 12px;
+    }
+}

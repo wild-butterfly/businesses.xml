@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="style.css"?>
+<!DOCTYPE businesses [
+    <!ELEMENT businesses (business*)>
+    <!ELEMENT business (name, gif, sound, items)>
+    <!ELEMENT name (#PCDATA)>
+    <!ELEMENT gif (#PCDATA)>
+    <!ELEMENT sound (#PCDATA)>
+    <!ELEMENT items (item*)>
+    <!ELEMENT item (name, price, description)>
+    <!ELEMENT price (#PCDATA)>
+    <!ELEMENT description (#PCDATA)>
+]>
+
+<businesses>
+    <business>
+        <name>Luca's Loaves</name>
+        <gif>bread.gif</gif>
+        <sound>bread_sound.mp3</sound>
+        <items>
+            <item>
+                <name>Sourdough White</name>
+                <price>$7.00</price>
+                <description>Our standard sourdough</description>
+            </item>
+            <item>
+                <name>Sourdough Rye</name>
+                <price>$8.00</price>
+                <description>Sourdough created with 50% rye flour</description>
+            </item>
+            <item>
+                <name>Sourdough Spelt</name>
+                <price>$9.00</price>
+                <description>Sourdough created with 100% spelt flour.</description>
+            </item>
+            <item>
+                <name>Sourdough Seeded</name>
+                <price>$9.50</price>
+                <description>Sourdough including a mixture of yummy seeds.</description>
+            </item>
+        </items>
+    </business>
+
+    <business>
+        <name>Bryan's Café</name>
+        <gif>food.gif</gif>
+        <sound>food_sound.mp3</sound>
+        <items>
+            <item>
+                <name>Beetroot and Feta Salad</name>
+                <price>$15.00</price>
+                <description>Suitable for vegetarians, made with fresh beetroot</description>
+            </item>
+            <item>
+                <name>Sourdough Rye Sandwich</name>
+                <price>$18.00</price>
+                <description>Cheese and salad sandwich made with organic, sourdough rye bread</description>
+            </item>
+            <item>
+                <name>Spinach Pie and Salad</name>
+                <price>$20.00</price>
+                <description>Tasty pie with salad</description>
+            </item>
+            <item>
+                <name>Feta Pancakes with Salad</name>
+                <price>$19.50</price>
+                <description>Tasty pancake filled with feta and salad.</description>
+            </item>
+        </items>
+    </business>
+</businesses>
